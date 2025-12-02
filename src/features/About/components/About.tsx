@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function About() {
-  const [state, setState] = React.useState({});
+const About: React.FC = () => {
+  const [state, setState] = React.useState<Record<string, any>>({});
 
-  const atualizarValor = (novoValor) => {
+  const atualizarValor = (novoValor?: string) => {
     setState(prev => ({
       ...prev,
-      novoValor: novoValor !== undefined ? novoValor : 'Valor Padrão'
+      novoValor: novoValor !== undefined ? novoValor : 'Valor Padrão',
     }));
   };
 
@@ -18,4 +18,6 @@ export default function About() {
       <pre>{JSON.stringify(state, null, 2)}</pre>
     </>
   );
-}
+};
+
+export default About;
