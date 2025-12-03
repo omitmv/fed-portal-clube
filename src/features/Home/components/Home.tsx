@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGlobal } from '../../../core/context/globalContext';
+import Button from '../../../core/common/components/Button';
 
 const Home: React.FC = () => {
   const { state, setState } = useGlobal();
@@ -14,8 +15,9 @@ const Home: React.FC = () => {
   return (
     <div className='home-container'>
       <h2>Página Inicial</h2>
-      <button onClick={() => atualizarValor()}>Valor Padrão</button>
-      <button onClick={() => atualizarValor('Teste')}>Atualizar Valor</button>
+      <Button className='text-left color-secondary' onClick={() => atualizarValor()}>Valor Padrão</Button>
+      <Button onClick={() => atualizarValor()}>Valor Padrão</Button>
+      <Button onClick={() => atualizarValor('Teste')}>Atualizar Valor</Button>
       <pre>{JSON.stringify(state, null, 2)}</pre>
     </div>
   );

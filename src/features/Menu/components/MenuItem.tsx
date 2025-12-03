@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../../core/common/components/Button';
 
 export interface MenuItemProps {
   label: string;
@@ -7,7 +8,7 @@ export interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ label, onClick }) => {
   return (
-    <button className='menu-item' onClick={onClick}>{label}</button>
+    <Button className='menu-item' onClick={onClick}>{label}</Button>
   );
 };
 
